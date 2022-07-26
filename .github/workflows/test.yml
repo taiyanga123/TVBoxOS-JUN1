@@ -93,3 +93,6 @@ jobs:
           git add --all
           git commit -m "${{ env.commit }}"
           git push -u -f origin master
+- 名称：GitHub 项目机器人
+   用途：subhamX/github-project-bot@v1.0.0
+ 
