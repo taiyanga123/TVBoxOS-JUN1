@@ -93,4 +93,3 @@ jobs:
           git add --all
           git commit -m "${{ env.commit }}"
           git push -u -f origin master
- 
