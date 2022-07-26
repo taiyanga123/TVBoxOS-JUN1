@@ -19,7 +19,7 @@ jobs:
           fetch-depth: 0
       - name: Check New Commit
         run: |
-          upstreamCode=https://github.com/chengxue2020/TG-Junyuphper
+          upstreamCode=https://github.com/xczxcx2255/TVBoxOS-JUN
           echo "upstreamCode=$upstreamCode" >> $GITHUB_ENV
           commit=$(curl -sL $upstreamCode/commits/main |grep -o '/chengxue2020/TG-Junyuphper/commit/[a-z0-9]\+' |head -1 | cut -d\/ -f5)
           if ! git log --oneline |grep -q "$commit"; then
