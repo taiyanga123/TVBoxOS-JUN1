@@ -69,10 +69,10 @@ jobs:
           rm -rf apk/
           mkdir -p apk/
           for file in `find ~ -name "*release*.apk" -print`; do
-            mv "$file" apk/TVBox_Junyuphper_Release_${{ env.tag }}.apk
+            mv "$file" apk/TVBox_BINJN_Release_${{ env.tag }}.apk
           done
           for file in `find ~ -name "*debug*.apk" -print`; do
-            mv "$file" apk/TVBox_Junyuphper_Debug_${{ env.tag }}.apk
+            mv "$file" apk/TVBox_BINJN_Debug_${{ env.tag }}.apk
           done
       - name: Upload App To Artifact
         uses: actions/upload-artifact@v3
