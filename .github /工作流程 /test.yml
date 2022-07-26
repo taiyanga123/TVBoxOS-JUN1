@@ -54,14 +54,7 @@ jobs:
         run: |
           chmod +x gradlew
           ./gradlew assemblerelease --build-cache --parallel --daemon --warning-mode all
-          
-      - name: Build Debug With Gradle
-        if: ${{ env.commit }}
-        working-directory: TVBoxOSC
-        run: |
-          chmod +x gradlew
-          ./gradlew assembledebug --build-cache --parallel --daemon --warning-mode all
-          
+            
       - name: Prepare App
         if: ${{ env.commit }}
         working-directory: TVBoxOSC
@@ -71,14 +64,12 @@ jobs:
           for file in `find ~ -name "*release*.apk" -print`; do
             mv "$file" apk/TVBox_BINJN_Release_${{ env.tag }}.apk
           done
-          for file in `find ~ -name "*debug*.apk" -print`; do
-            mv "$file" apk/TVBox_BINJN_Debug_${{ env.tag }}.apk
-          done
+          
       - name: Upload App To Artifact
         uses: actions/upload-artifact@v3
         if: ${{ env.commit }}
         with:
-          name: TVBox_Junyuphper_Release_and_Debug
+          name: TVBox_Release
           path: TVBoxOSC/apk/*
       - name: Release and Upload Assets
         uses: softprops/action-gh-release@v1
