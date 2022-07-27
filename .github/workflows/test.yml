@@ -62,7 +62,7 @@ jobs:
           rm -rf apk/
           mkdir -p apk/
           for file in `find ~ -name "*release*.apk" -print`; do
-            mv "$file" apk/TVBox_BINJN_Release_${{ env.tag }}.apk
+            mv "$file" apk/TVBox_Release_${{ env.tag }}.apk
           done
           
       - name: Upload App To Artifact
